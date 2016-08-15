@@ -1,5 +1,30 @@
 Custom SELinux Policies for Cloudstack services, ports, account(s), and file-system ...
 
+Refs:
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/Ports+used+by+CloudStack
+
+Ports used by CloudStack and its entities:
+Management Server
+8080: Primary GUI / Authentication API Port
+8096: User/Client to CloudStack Management Server (unauthenticated)
+8787: CloudStack (Tomcat) debug socket
+9090: Cloudstack Management Cluster Interface
+45219: JMX console
+SystemVM Agent Communication - Must be open on Management Server
+3922: Secure System secure communication port
+8250: SystemVM to Management unsecure communication port
+MySQL Server
+3306: MySQL Server
+Hypervisor
+22/443: XenServer, XAPI
+22: KVM
+443: vCenter
+External Ports
+53: DNS
+111/2049: NFS communication for Secondary Storage VM
+860/3260: iSCSI communication port for iSCSI software connector 
+7080: AWS API server
+
 1) Reference Policy make targets:
 
 General Make targets:
